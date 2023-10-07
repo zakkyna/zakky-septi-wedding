@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useLayoutEffect, useRef } from "react";
+import { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
@@ -66,8 +66,8 @@ export default function VideoScroll1() {
   //     </>
   // );
 
-  const containerRef = useRef() as any;
-  const videoRef = useRef() as any;
+  const containerRef = useRef(null);
+  const videoRef = useRef<any>(null);
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -75,11 +75,18 @@ export default function VideoScroll1() {
     let ctx = gsap.context(() => {
       let tl = gsap.timeline({
         scrollTrigger: {
-          trigger: "video",
+          trigger: videoRef.current,
           start: "top top",
-          end: "bottom+=800% bottom",
-          scrub: 2,
+          end: "bottom+=700% bottom",
+          scrub: true,
           markers: false,
+          ontouchstart:  () => videoRef.current.play(),
+          ontouchmove:  () => videoRef.current.play(),
+          ontouchend(ev) {
+            videoRef.current.pause();
+            ev.preventDefault();
+          },
+          
         },
       });
 
@@ -88,24 +95,24 @@ export default function VideoScroll1() {
         tl.to(videoRef.current, { currentTime: videoRef.current.duration });
       };
 
-      // Dealing with devices
-      // function isTouchDevice() {
-      //   return "ontouchstart" in window || navigator.maxTouchPoints > 0;
-      // }
-      // if (isTouchDevice()) {
-      //   console.log("rodou FN");
-
-      //   videoRef.current.setNativeProps({ paused: true });
-      //   videoRef.current.setNativeProps({ paused: false });
-      // }
+      
+      
     }, containerRef); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
   }, []);
 
   return (
-    <>
-    
+    <div ref={containerRef}
+    style={{
+      position: 'sticky',
+      top: 0,
+      left: 0,
+      width: '100vw',
+      height: '100vh',
+      objectFit: 'cover',
+  }}
+    >
       <video
         ref={videoRef}
         playsInline={true}
@@ -126,8 +133,7 @@ export default function VideoScroll1() {
           src="video/videobackground.mp4"
           type="video/mp4"
         />
-        <div ref={containerRef}></div>
       </video>
-    </>
+      </div>
   );
 }
