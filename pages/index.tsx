@@ -125,7 +125,7 @@ const Home = () => {
           <WelcomeSection
             place={placeName}
             scrollUpRef={scrollUpRef}
-            onScrollDownClick={goScrollDown}
+            onScrollDownClick={null}
           />
          <Stack>
           <VideoScroll1 />
