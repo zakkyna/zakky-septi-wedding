@@ -1,3 +1,5 @@
+"use client";
+
 import React, { useLayoutEffect, useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
@@ -64,8 +66,8 @@ export default function VideoScroll1() {
   //     </>
   // );
 
-  const containerRef = useRef(null);
-  const videoRef = useRef<any>(null);
+  const containerRef = useRef() as any;
+  const videoRef = useRef() as any;
 
   gsap.registerPlugin(ScrollTrigger);
 
@@ -87,15 +89,15 @@ export default function VideoScroll1() {
       };
 
       // Dealing with devices
-      function isTouchDevice() {
-        return "ontouchstart" in window || navigator.maxTouchPoints > 0;
-      }
-      if (isTouchDevice()) {
-        console.log("rodou FN");
+      // function isTouchDevice() {
+      //   return "ontouchstart" in window || navigator.maxTouchPoints > 0;
+      // }
+      // if (isTouchDevice()) {
+      //   console.log("rodou FN");
 
-        videoRef.current.setNativeProps({ paused: true });
-        videoRef.current.setNativeProps({ paused: false });
-      }
+      //   videoRef.current.setNativeProps({ paused: true });
+      //   videoRef.current.setNativeProps({ paused: false });
+      // }
     }, containerRef); // <- IMPORTANT! Scopes selector text
 
     return () => ctx.revert(); // cleanup
