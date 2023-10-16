@@ -45,8 +45,8 @@ const CoupleSection = (props: CoupleProps) => {
               >
                 <p className="text-center couple-name">{item.name}</p>
                 <p className="desc text-center text-#414141">
-                  {item._id === 'couple_0' ? 'Putri' : 'Putra'} dari Bapak{' '}
-                  {item.father} &{props.isMobile ? <br /> : ' '}
+                  {item._id === 'couple_0' ? 'Putri' : 'Putra'} dari <br /> Bapak{' '}
+                  {item.father} {props.isMobile ? <br /> : ' '}&{props.isMobile ? <br /> : ' '}
                   Ibu {item.mother}
                 </p>
                 <p className="desc text-center text-#A79076">

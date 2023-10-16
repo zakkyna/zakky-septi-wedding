@@ -27,6 +27,8 @@ import {
 
 import VideoScroll1 from '../components/video-scroll';
 import { Stack } from 'react-bootstrap';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
 
 const Home = () => {
   const router = useRouter();
@@ -125,7 +127,7 @@ const Home = () => {
           <WelcomeSection
             place={placeName}
             scrollUpRef={scrollUpRef}
-            onScrollDownClick={null}
+            onScrollDownClick={goScrollDown}
           />
           <Stack>
             <VideoScroll1 />
@@ -136,7 +138,21 @@ const Home = () => {
                 place={placeName}
                 isMobile={isMobile}
               />
-              <BrownSection />
+              {/* <BrownSection /> */}
+              <div style={{ height: '60vh' }}>
+                <div className="keep-scroll" >
+                  <p className="text-center text-black scroll-text mb-1">
+                    Keep Scroll
+                  </p>
+                  <div className="text-center icon-down">
+                    <FontAwesomeIcon
+                      icon={faChevronDown}
+                      color={'#000000'}
+                      size={'lg'}
+                    />
+                  </div>
+                </div>
+              </div>
               <EventSection
                 eventTime={eventTime}
                 isMobile={isMobile}

@@ -28,15 +28,15 @@ export const eventTime = {
 export const storyData = {
   firstMeet: {
     title: 'First Meet ~ 2015',
-    desc: '',
+    desc: 'Masa sekolah di SMK Negeri 1 Pemalang',
   },
   expressFeelings: {
     title: '~ 2016 - 2022',
-    desc: 'LDR',
+    desc: 'LDR antara Bekasi - Pemalang, Jakarta - Semarang, Yogyakarta - Semarang',
   },
   engagement: {
     title: 'Engagement ~ 2022',
-    desc: '',
+    desc: 'Pada tanggal 14 Agustus 2022 di Pemalang',
   },
   goesToMarried: {
     title: 'Goes to Married ~ 2023',

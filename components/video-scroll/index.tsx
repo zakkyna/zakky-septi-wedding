@@ -1,3 +1,5 @@
+import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useEffect } from "react";
 
 export default function VideoScroll1() {
@@ -78,6 +80,7 @@ export default function VideoScroll1() {
           width: "100%",
           height: "100vh",
           objectFit: "cover",
+          zIndex: 0,
         }}
         preload="preload"
         loop
@@ -87,6 +90,18 @@ export default function VideoScroll1() {
         ></source>
         <div ref={scrollSectionRef} id="scrollSection"></div>
       </video>
+      <div className="keep-scroll" >
+        <p className="text-center text-black scroll-text mb-1">
+          Keep Scroll
+        </p>
+        <div className="text-center icon-down">
+          <FontAwesomeIcon
+            icon={faChevronDown}
+            color={'#000000'}
+            size={'lg'}
+          />
+        </div>
+      </div>
     </>
   );
 }

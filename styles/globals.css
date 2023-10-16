@@ -107,6 +107,18 @@ body {
   opacity: 1;
 }
 
+.keep-scroll {
+  display: block;
+  margin-top: 1rem;
+  text-decoration: none;
+  opacity: 0.6;
+  transition: 0.2s;
+  cursor: pointer;
+}
+
+.keep-scroll:hover {
+  opacity: 0.5;
+}
 .scroll-text {
   font-size: 12px;
 }
