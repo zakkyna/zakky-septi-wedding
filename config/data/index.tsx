@@ -22,7 +22,7 @@ export const dtCouple = [
 export const eventTime = {
   akad: moment('2023-10-30 08:00'),
   startResepsi: moment('2023-10-30 11:00'),
-  location: 'https://maps.app.goo.gl/GuNWQCL9GyHxyzKb6',
+  location: 'https://maps.app.goo.gl/U8GynrSHAM3djLXa7',
 };
 
 export const storyData = {

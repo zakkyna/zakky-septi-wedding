@@ -54,8 +54,6 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="/img/welcome-bg.jpg"
           as="image"
         />
-        <Script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js" />
-        <Script src="/js/videobackground.js" />
       </Head>
       <Component {...pageProps} />
       <ToastContainer />

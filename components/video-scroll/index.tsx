@@ -83,7 +83,7 @@ export default function VideoScroll1() {
         loop
       >
         <source
-          src="video/videobackground1.webm"
+          src="video/videobackground_fix.webm"
         ></source>
         <div ref={scrollSectionRef} id="scrollSection"></div>
       </video>
