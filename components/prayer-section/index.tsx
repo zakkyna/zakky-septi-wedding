@@ -1,6 +1,6 @@
 import React from 'react';
-import {Col, Container, Row, Card} from 'react-bootstrap';
-
+import { Col, Container, Row, Card } from 'react-bootstrap';
+import Image from 'next/image'
 interface PrayerProps {
   scrollDownRef: any;
 }

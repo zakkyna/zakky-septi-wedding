@@ -1,7 +1,8 @@
 import React from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
-import {faInstagram} from '@fortawesome/free-brands-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { Col, Container, Row } from 'react-bootstrap';
+import { faInstagram } from '@fortawesome/free-brands-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image'
 
 interface CoupleProps {
   data: any;
@@ -13,12 +14,12 @@ const CoupleSection = (props: CoupleProps) => {
   const filteredData = (data: any, place: string) => {
     return data.sort((a: any, b: any) => {
       return a._id > b._id ? -1 : 1;
-      
+
     });
   };
 
   return (
-    <section className="couple-section py-5" style={{overflow: 'hidden'}}>
+    <section className="couple-section py-5" style={{ overflow: 'hidden' }}>
       <Container className="my-3">
         <h3
           className="title text-center mb-4"
@@ -30,9 +31,10 @@ const CoupleSection = (props: CoupleProps) => {
           {filteredData(props.data, props.place).map((item: any, i: number) => (
             <Col md={6} className="mb-4" key={item.id}>
               <img
+
+                alt=""
                 src={item.img}
                 className="couple-img mt-5 mb-4"
-                alt=""
                 data-aos={i === 0 ? 'fade-right' : 'fade-left'}
                 data-aos-duration="2000"
               />
@@ -40,7 +42,7 @@ const CoupleSection = (props: CoupleProps) => {
                 data-aos={i === 0 ? 'fade-right' : 'fade-left'}
                 data-aos-duration="2000"
                 className="couple-desc"
-                >
+              >
                 <p className="text-center couple-name">{item.name}</p>
                 <p className="desc text-center text-#414141">
                   {item._id === 'couple_0' ? 'Putri' : 'Putra'} dari Bapak{' '}
@@ -48,7 +50,7 @@ const CoupleSection = (props: CoupleProps) => {
                   Ibu {item.mother}
                 </p>
                 <p className="desc text-center text-#A79076">
-                  {item._id === 'couple_0' ? 'Pemalang, Jawa Tengah' : 'Bekasi, Jawa Barat'} 
+                  {item._id === 'couple_0' ? 'Pemalang, Jawa Tengah' : 'Bekasi, Jawa Barat'}
                 </p>
                 {/* <div className="btn-sosmed d-flex justify-content-center">
                   <a href={item.ig_url} target="_blank">

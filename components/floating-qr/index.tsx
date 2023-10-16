@@ -1,7 +1,8 @@
 import React from 'react';
-import {Modal} from 'react-bootstrap';
-import {faGift} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { Modal } from 'react-bootstrap';
+import { faGift } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import Image from 'next/image'
 
 interface FloatingQRProps {
   onClick: Function | any;
@@ -24,7 +25,7 @@ const FloatingQR = (props: FloatingQRProps) => {
       handleClose();
     }
 
-    return () => {};
+    return () => { };
   }, [props.show]);
 
   return (
@@ -39,6 +40,9 @@ const FloatingQR = (props: FloatingQRProps) => {
         </Modal.Header>
         <Modal.Body className="m-0 p-0">
           <img
+
+            alt=""
+
             src={
               '/img/qris-zakky-septi.jpg'
             }

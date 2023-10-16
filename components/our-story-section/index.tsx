@@ -1,5 +1,6 @@
 import React from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
+import { Col, Container, Row } from 'react-bootstrap';
+import Image from 'next/image'
 
 interface OurStoryProps {
   storyData: any;
@@ -8,7 +9,7 @@ interface OurStoryProps {
 
 const OurStorySection = (props: OurStoryProps) => {
   return (
-    <section className="story-section py-5" style={{overflow: 'hidden'}}>
+    <section className="story-section py-5" style={{ overflow: 'hidden' }}>
       <Container className="my-3">
         <h3
           className="title text-center mb-4"
@@ -22,6 +23,8 @@ const OurStorySection = (props: OurStoryProps) => {
             <Row className="py-3 mb-5">
               <Col md={6}>
                 <img
+
+                  alt=""
                   src="/img/first-meet.jpg"
                   className="d-block img-holder"
                   data-aos="fade-right"
@@ -50,6 +53,9 @@ const OurStorySection = (props: OurStoryProps) => {
               </Col>
               <Col md={6}>
                 <img
+
+                  alt=""
+
                   src="/img/ldr.jpg"
                   className="d-block img-holder"
                   data-aos="fade-left"
@@ -60,6 +66,9 @@ const OurStorySection = (props: OurStoryProps) => {
             <Row className="py-3 mb-5">
               <Col md={6}>
                 <img
+
+                  alt=""
+
                   src="/img/engagement.jpg"
                   className="d-block img-holder"
                   data-aos="fade-right"
@@ -88,6 +97,9 @@ const OurStorySection = (props: OurStoryProps) => {
               </Col>
               <Col md={6}>
                 <img
+
+                  alt=""
+
                   src="/img/goes-to-married.jpg"
                   className="d-block img-holder"
                   data-aos="fade-left"
@@ -105,6 +117,8 @@ const OurStorySection = (props: OurStoryProps) => {
                   data-aos="fade-up"
                   data-aos-duration="2000">
                   <img
+
+                    alt=""
                     src="/img/first-meet.jpg"
                     className="d-block img-holder mb-4"
                   />
@@ -120,6 +134,8 @@ const OurStorySection = (props: OurStoryProps) => {
                   data-aos="fade-up"
                   data-aos-duration="2000">
                   <img
+
+                    alt=""
                     src="/img/ldr.jpg"
                     className="d-block img-holder mb-4"
                   />
@@ -137,6 +153,8 @@ const OurStorySection = (props: OurStoryProps) => {
                   data-aos="fade-up"
                   data-aos-duration="2000">
                   <img
+
+                    alt=""
                     src="/img/engagement.jpg"
                     className="d-block img-holder mb-4"
                   />
@@ -152,6 +170,9 @@ const OurStorySection = (props: OurStoryProps) => {
                   data-aos="fade-up"
                   data-aos-duration="2000">
                   <img
+
+                    alt=""
+
                     src="/img/goes-to-married.jpg"
                     className="d-block img-holder mb-4"
                   />
