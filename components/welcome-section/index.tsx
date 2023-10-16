@@ -1,7 +1,7 @@
 import React from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
-import {faChevronDown} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { Col, Container, Row, Stack } from 'react-bootstrap';
+import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import moment from 'moment';
 
 interface WelcomeProps {
@@ -28,7 +28,7 @@ const WelcomeSection = (props: WelcomeProps) => {
                 <p className="mb-1 text-center text-white welcome-wd-place">
                   The Wedding |{' '}
                   {moment(
-                    props.place === 'bks' ? '2023-10-30' : '2023-10-30',
+                    '2023-10-30',
                   ).format('DD.MM.YYYY')}{' '}
                   | {props.place === 'bks' ? 'Bekasi' : 'Pemalang'}
                 </p>

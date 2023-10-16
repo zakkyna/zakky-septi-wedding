@@ -2,18 +2,19 @@ import '../styles/globals.css';
 import '../styles/responsive.css';
 import 'bootstrap/dist/css/bootstrap.min.css';
 import React from 'react';
-import type {AppProps} from 'next/app';
+import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import {ToastContainer} from 'react-toastify';
+import { ToastContainer } from 'react-toastify';
 import 'react-toastify/dist/ReactToastify.css';
 import 'react-activity/dist/library.css';
 import moment from 'moment';
 import 'moment/locale/id';
+import Script from 'next/script';
 
 moment.locale('id');
 React.useLayoutEffect = React.useEffect;
 
-function MyApp({Component, pageProps}: AppProps) {
+function MyApp({ Component, pageProps }: AppProps) {
 
   const coupleName = 'Zakky & Septi';
   const imgUrl = 'https://zakkysepti.vercel.app/img/web-thumb.jpg';
@@ -48,6 +49,13 @@ function MyApp({Component, pageProps}: AppProps) {
           content={'We invited you to celebrate our wedding!'}
           key="ogdesc"
         />
+        <link
+          rel="preload"
+          href="/img/welcome-bg.jpg"
+          as="image"
+        />
+        <Script src="https://cdn.jsdelivr.net/npm/scrolly-video@latest/dist/scrolly-video.js" />
+        <Script src="/js/videobackground.js" />
       </Head>
       <Component {...pageProps} />
       <ToastContainer />

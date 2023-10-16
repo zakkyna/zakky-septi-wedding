@@ -2,7 +2,7 @@ import React from 'react';
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import FrontCover from '../components/front-cover';
-import {useRouter} from 'next/router';
+import { useRouter } from 'next/router';
 import WelcomeSection from '../components/welcome-section';
 import PrayerSection from '../components/prayer-section';
 import CoupleSection from '../components/couple-section';
@@ -17,7 +17,7 @@ import GallerySection from '../components/gallery-section';
 import ConfirmSection from '../components/confirm-section';
 import GreetingsSection from '../components/greetings-section';
 import FooterSection from '../components/footer-section';
-import {useAudio} from '../utils/helper';
+import { useAudio } from '../utils/helper';
 import {
   dtCouple,
   eventTime,
@@ -30,7 +30,7 @@ import { Stack } from 'react-bootstrap';
 
 const Home = () => {
   const router = useRouter();
-  const {place, session, to} = router.query;
+  const { place, session, to } = router.query;
 
   const urlAudio = '/music/main-music.mp3';
   const [playing, setPlaying, toggle] = useAudio(urlAudio) as any;
@@ -60,7 +60,7 @@ const Home = () => {
     isMobileScreen();
     window.addEventListener('scroll', scrollTopVisible);
 
-    return () => {};
+    return () => { };
   }, []);
 
   React.useEffect(() => {
@@ -68,7 +68,7 @@ const Home = () => {
     setSessionNum(session !== undefined ? `${session}` : '');
     setGuestName(to !== undefined ? `${to}` : '');
 
-    return () => {};
+    return () => { };
   }, [place, session, to]);
 
   const isMobileScreen = () => {
@@ -88,7 +88,7 @@ const Home = () => {
 
   const goScrollDown = () => {
     if (scrollDownRef.current) {
-      scrollDownRef.current.scrollIntoView({behavior: 'smooth'});
+      scrollDownRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -103,7 +103,7 @@ const Home = () => {
 
   const goScrollUp = () => {
     if (scrollUpRef.current) {
-      scrollUpRef.current.scrollIntoView({behavior: 'smooth'});
+      scrollUpRef.current.scrollIntoView({ behavior: 'smooth' });
     }
   };
 
@@ -127,31 +127,31 @@ const Home = () => {
             scrollUpRef={scrollUpRef}
             onScrollDownClick={null}
           />
-         <Stack>
-          <VideoScroll1 />
-          <>
-          <PrayerSection scrollDownRef={scrollDownRef} />
-          <CoupleSection
-            data={dtCouple}
-            place={placeName}
-            isMobile={isMobile}
-          />
-          <BrownSection />
-          <EventSection
-            eventTime={eventTime}
-            isMobile={isMobile}
-            place={placeName}
-            session={sessionNum}
-          />
-          <CountdownSection
-            eventTime={eventTime}
-            place={placeName}
-            isMobile={isMobile}
-          />
-          <OurStorySection storyData={storyData} isMobile={isMobile} />
-          <GallerySection imgGallery={imgGallery} />
+          <Stack>
+            <VideoScroll1 />
+            <>
+              <PrayerSection scrollDownRef={scrollDownRef} />
+              <CoupleSection
+                data={dtCouple}
+                place={placeName}
+                isMobile={isMobile}
+              />
+              <BrownSection />
+              <EventSection
+                eventTime={eventTime}
+                isMobile={isMobile}
+                place={placeName}
+                session={sessionNum}
+              />
+              <CountdownSection
+                eventTime={eventTime}
+                place={placeName}
+                isMobile={isMobile}
+              />
+              <OurStorySection storyData={storyData} isMobile={isMobile} />
+              <GallerySection imgGallery={imgGallery} />
 
-          </>
+            </>
           </Stack>
           {guestName !== '' && (
             <ConfirmSection guestName={guestName} place={placeName} />
