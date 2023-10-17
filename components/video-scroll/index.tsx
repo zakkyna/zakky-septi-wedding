@@ -69,36 +69,45 @@ export default function VideoScroll1() {
     };
   });
 
+  // deteksi browser
+  const isSupportedBrowser = () => {
+    const userAgent = navigator.userAgent.toLowerCase();
+    return (
+      (userAgent.indexOf("chrome") > -1 ||
+        userAgent.indexOf("edge") > -1 ||
+        userAgent.indexOf("safari") > -1) &&
+      !navigator.userAgent.match(/(iPod|iPhone|iPad)/)
+    );
+  };
+
   return (
     <>
-      <video
-        ref={videoRef}
-        style={{
-          position: "sticky",
-          top: 0,
-          left: 0,
-          bottom: 0,
-          right: 0,
-          width: "100%",
-          height: "100vh",
-          objectFit: "cover",
-        }}
-        preload="preload"
-        loop
-        muted
-        disableRemotePlayback
-        playsInline
-        controls={false}
-        disablePictureInPicture
-        height={"100vh"}
-        draggable={false}
-
-      >
-        <source
-          src="video/video_background.webm"
-        ></source>
-        <div ref={scrollSectionRef} id="scrollSection"></div>
-      </video>
+      {isSupportedBrowser() && (
+        <video
+          ref={videoRef}
+          style={{
+            position: "sticky",
+            top: 0,
+            left: 0,
+            width: "100%",
+            height: "100vh",
+            objectFit: "cover",
+          }}
+          preload="preload"
+          loop
+          muted
+          disableRemotePlayback
+          playsInline
+          controls={false}
+          disablePictureInPicture={true}
+          draggable={false}
+        >
+          <source
+            src="video/video_background.webm"
+          ></source>
+          <div ref={scrollSectionRef} id="scrollSection"></div>
+        </video>
+      )}
       <div className="keep-scroll" >
         <p className="text-center text-black scroll-text mb-1">
           Keep Scroll
