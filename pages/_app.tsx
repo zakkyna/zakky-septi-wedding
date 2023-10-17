@@ -54,6 +54,11 @@ function MyApp({ Component, pageProps }: AppProps) {
           href="/img/welcome-bg.jpg"
           as="image"
         />
+        <link
+          rel="preload"
+          href="/video/video_background.webm"
+          as="video"
+        />
       </Head>
       <Component {...pageProps} />
       <ToastContainer />
