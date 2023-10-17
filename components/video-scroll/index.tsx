@@ -77,13 +77,22 @@ export default function VideoScroll1() {
           position: "sticky",
           top: 0,
           left: 0,
+          bottom: 0,
+          right: 0,
           width: "100%",
           height: "100vh",
           objectFit: "cover",
-          zIndex: 0,
         }}
         preload="preload"
         loop
+        muted
+        disableRemotePlayback
+        playsInline
+        controls={false}
+        disablePictureInPicture
+        height={"100vh"}
+        draggable={false}
+
       >
         <source
           src="video/video_background.webm"
