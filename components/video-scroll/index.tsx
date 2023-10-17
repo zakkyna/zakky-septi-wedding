@@ -12,8 +12,10 @@ export default function VideoScroll1() {
     return (
       (userAgent.indexOf("chrome") > -1 ||
         userAgent.indexOf("edge") > -1 ||
-        userAgent.indexOf("safari") > -1) &&
-      !RegExp(/(iPod|iPhone|iPad)/).exec(navigator.userAgent)
+        userAgent.indexOf("safari") > -1 ||
+        userAgent.indexOf("firefox") > -1) &&
+      !RegExp(/(iPod|iPhone|iPad)/).exec(navigator.userAgent) &&
+      userAgent.indexOf("miuibrowser") === -1
     );
   };
 
