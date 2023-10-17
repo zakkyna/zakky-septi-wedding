@@ -138,21 +138,6 @@ const Home = () => {
                 place={placeName}
                 isMobile={isMobile}
               />
-              {/* <BrownSection /> */}
-              <div style={{ height: '60vh' }}>
-                <div className="keep-scroll" >
-                  <p className="text-center text-black scroll-text mb-1">
-                    Keep Scroll
-                  </p>
-                  <div className="text-center icon-down">
-                    <FontAwesomeIcon
-                      icon={faChevronDown}
-                      color={'#000000'}
-                      size={'lg'}
-                    />
-                  </div>
-                </div>
-              </div>
               <EventSection
                 eventTime={eventTime}
                 isMobile={isMobile}

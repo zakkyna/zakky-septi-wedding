@@ -7,78 +7,83 @@ export default function VideoScroll1() {
   const scrollSectionRef = useRef() as any;
   const playbackConst = 300;
 
-  useEffect(() => {
-    const video = videoRef.current;
-
-    video.addEventListener("loadedmetadata", () => {
-      const { duration } = video;
-      const scrollSection = scrollSectionRef.current;
-      if (videoRef?.current) {
-        if (scrollSectionRef?.current) {
-          scrollSection.style.height =
-            Math.floor(duration) * playbackConst + "px";
-        }
-      }
-      // if touch device
-      function isTouchDevice() {
-        return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
-      }
-      if (isTouchDevice()) {
-        videoRef.current.play();
-        videoRef.current.pause();
-        window.addEventListener("touchmove", handleTouchMove);
-      }
-    });
-
-    return () => {
-      video.removeEventListener("loadedmetadata", () => { });
-      window.removeEventListener("touchmove", handleTouchMove);
-    };
-  });
-
-  const handleTouchMove = () => {
-    const video = videoRef.current;
-    if (video) {
-      video.play();
-    }
-  };
-
-  useEffect(() => {
-    const video = videoRef.current;
-    let scrollTimeout: NodeJS.Timeout;
-
-    const handleScroll = () => {
-      const videoTop = video.getBoundingClientRect().top;
-      const videoBottom = video.getBoundingClientRect().bottom;
-      const windowHeight = window.innerHeight;
-      if (videoTop < windowHeight && videoBottom > 0) {
-        video.play();
-        clearTimeout(scrollTimeout);
-        scrollTimeout = setTimeout(() => {
-          video.pause();
-        }, 100);
-      } else {
-        video.pause();
-      }
-    };
-
-    window.addEventListener("scroll", handleScroll);
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  });
-
-  // deteksi browser
   const isSupportedBrowser = () => {
     const userAgent = navigator.userAgent.toLowerCase();
     return (
       (userAgent.indexOf("chrome") > -1 ||
         userAgent.indexOf("edge") > -1 ||
         userAgent.indexOf("safari") > -1) &&
-      !navigator.userAgent.match(/(iPod|iPhone|iPad)/)
+      !RegExp(/(iPod|iPhone|iPad)/).exec(navigator.userAgent)
     );
   };
+
+  useEffect(() => {
+    if (isSupportedBrowser()) {
+      const video = videoRef.current;
+
+      video.addEventListener("loadedmetadata", () => {
+        const { duration } = video;
+        const scrollSection = scrollSectionRef.current;
+        if (videoRef?.current) {
+          if (scrollSectionRef?.current) {
+            scrollSection.style.height =
+              Math.floor(duration) * playbackConst + "px";
+          }
+        }
+        // if touch device
+        function isTouchDevice() {
+          return 'ontouchstart' in window || navigator.maxTouchPoints > 0;
+        }
+        if (isTouchDevice()) {
+          videoRef.current.play();
+          videoRef.current.pause();
+          window.addEventListener("touchmove", handleTouchMove);
+        }
+      });
+
+      return () => {
+        video.removeEventListener("loadedmetadata", () => { });
+        window.removeEventListener("touchmove", handleTouchMove);
+      };
+    }
+  });
+
+  const handleTouchMove = () => {
+    if (isSupportedBrowser()) {
+      const video = videoRef.current;
+      if (video) {
+        video.play();
+      }
+    }
+  };
+
+  useEffect(() => {
+    if (isSupportedBrowser()) {
+      const video = videoRef.current;
+      let scrollTimeout: NodeJS.Timeout;
+
+      const handleScroll = () => {
+        const videoTop = video.getBoundingClientRect().top;
+        const videoBottom = video.getBoundingClientRect().bottom;
+        const windowHeight = window.innerHeight;
+        if (videoTop < windowHeight && videoBottom > 0) {
+          video.play();
+          clearTimeout(scrollTimeout);
+          scrollTimeout = setTimeout(() => {
+            video.pause();
+          }, 100);
+        } else {
+          video.pause();
+        }
+      };
+
+      window.addEventListener("scroll", handleScroll);
+
+      return () => {
+        window.removeEventListener("scroll", handleScroll);
+      };
+    }
+  });
 
   return (
     <>
@@ -108,18 +113,20 @@ export default function VideoScroll1() {
           <div ref={scrollSectionRef} id="scrollSection"></div>
         </video>
       )}
-      <div className="keep-scroll" >
-        <p className="text-center text-black scroll-text mb-1">
-          Keep Scroll
-        </p>
-        <div className="text-center icon-down">
-          <FontAwesomeIcon
-            icon={faChevronDown}
-            color={'#000000'}
-            size={'lg'}
-          />
+      {isSupportedBrowser() && (
+        <div className="keep-scroll" >
+          <p className="text-center text-black scroll-text mb-1">
+            Keep Scroll
+          </p>
+          <div className="text-center icon-down">
+            <FontAwesomeIcon
+              icon={faChevronDown}
+              color={'#000000'}
+              size={'lg'}
+            />
+          </div>
         </div>
-      </div>
+      )}
     </>
   );
 }
