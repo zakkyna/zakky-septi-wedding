@@ -1,6 +1,7 @@
 import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useEffect } from "react";
+import isMobile from 'is-mobile';
 
 export default function VideoScroll1() {
   const videoRef = useRef() as any;
@@ -18,6 +19,8 @@ export default function VideoScroll1() {
       userAgent.indexOf("miuibrowser") === -1
     );
   };
+
+  const isMobileDevice = isMobile();
 
   useEffect(() => {
     if (isSupportedBrowser()) {
@@ -110,7 +113,7 @@ export default function VideoScroll1() {
           draggable={false}
         >
           <source
-            src="video/video_background.webm"
+            src={isMobileDevice ? "video/video_background.webm" : "video/video_background_pc.webm"}
           ></source>
           <div ref={scrollSectionRef} id="scrollSection"></div>
         </video>

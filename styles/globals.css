@@ -55,13 +55,15 @@ body {
 }
 
 .wd-for-txt {
-  font-size: 18px;
+  font-size: 14px;
   color: #e0c99d;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .wd-guestname {
-  font-size: 24px;
+  font-size: 16px;
   font-weight: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
 .btn-open-invit {
@@ -715,4 +717,22 @@ body {
   box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
   -webkit-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
   -moz-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+
+
+.guest-name-card {
+  border-color: #a6a8a2 !important;
+  border-radius: 18px !important;
+  background-image: linear-gradient(#c4c0aa, #fcf8f9);
+  padding: 5px;
+  box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+  -webkit-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+  -moz-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+  opacity: 0.75;
+}
+
+.guest-name-card .wd-guestname {
+  font-size: 16px;
+  font-weight: medium;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
 }

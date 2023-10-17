@@ -9,7 +9,7 @@ import 'react-toastify/dist/ReactToastify.css';
 import 'react-activity/dist/library.css';
 import moment from 'moment';
 import 'moment/locale/id';
-import Script from 'next/script';
+import isMobile from 'is-mobile';
 
 moment.locale('id');
 React.useLayoutEffect = React.useEffect;
@@ -18,6 +18,7 @@ function MyApp({ Component, pageProps }: AppProps) {
 
   const coupleName = 'Zakky & Septi';
   const imgUrl = 'https://zakkysepti.vercel.app/img/web-thumb.jpg';
+  const isMobileDevice = isMobile();
 
   return (
     <>
@@ -56,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link
           rel="preload"
-          href="/video/video_background.webm"
+          href={isMobileDevice ? "/video/video_background.webm" : "/video/video_background_pc.webm"}
           as="video"
         />
       </Head>
