@@ -17,7 +17,7 @@ React.useLayoutEffect = React.useEffect;
 function MyApp({ Component, pageProps }: AppProps) {
 
   const coupleName = 'Zakky & Septi';
-  const imgUrl = 'https://zakkysepti.vercel.app/img/web-thumb.jpg';
+  const imgUrl = 'https://www.zakkysepti.com/img/web-thumb.jpg';
   const isMobileDevice = isMobile();
 
   return (
@@ -31,13 +31,13 @@ function MyApp({ Component, pageProps }: AppProps) {
         {/* Open Graph */}
         <meta
           property="og:url"
-          content={'https://zakkysepti.vercel.app'}
+          content={'https://zakkysepti.com'}
           key="ogurl"
         />
         <meta property="og:image" content={imgUrl} key="ogimage" />
         <meta
           property="og:site_name"
-          content={'Wedding Invitation'}
+          content={'Undangan Pernikahan Zakky & Septi'}
           key="ogsitename"
         />
         <meta
@@ -47,7 +47,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <meta
           property="og:description"
-          content={'We invited you to celebrate our wedding!'}
+          content={'Kami mengundang Anda untuk menghadiri acara pernikahan kami.'}
           key="ogdesc"
         />
         <link

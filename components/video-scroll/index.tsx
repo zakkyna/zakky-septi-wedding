@@ -143,10 +143,8 @@ export default function VideoScroll1() {
               </div>
             )} */}
           </video>
-
         </>
       )}
-
     </>
   );
 }
