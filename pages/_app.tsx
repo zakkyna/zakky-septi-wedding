@@ -57,7 +57,7 @@ function MyApp({ Component, pageProps }: AppProps) {
         />
         <link
           rel="preload"
-          href={isMobileDevice ? "/video/video_background.webm" : "/video/video_background_pc.webm"}
+          href={isMobileDevice ? "/video/videobackground_mobile.webm" : "/video/videobackground_web.webm"}
           as="video"
         />
       </Head>

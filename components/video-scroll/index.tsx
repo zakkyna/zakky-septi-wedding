@@ -44,6 +44,7 @@ export default function VideoScroll1() {
           videoRef.current.pause();
           window.addEventListener("touchmove", handleTouchMove);
         }
+
       });
 
       return () => {
@@ -113,7 +114,7 @@ export default function VideoScroll1() {
           draggable={false}
         >
           <source
-            src={isMobileDevice ? "video/video_background.webm" : "video/video_background_pc.webm"}
+            src={isMobileDevice ? "video/videobackground_mobile.webm" : "video/videobackground_web.webm"}
           ></source>
           <div ref={scrollSectionRef} id="scrollSection"></div>
         </video>

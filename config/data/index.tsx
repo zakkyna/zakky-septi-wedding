@@ -21,7 +21,7 @@ export const dtCouple = [
 
 export const eventTime = {
   akad: moment('2023-10-30 08:00'),
-  startResepsi: moment('2023-10-30 11:00'),
+  startResepsi: moment('2023-10-30 12:00'),
   location: 'https://maps.app.goo.gl/U8GynrSHAM3djLXa7',
 };
 
@@ -31,7 +31,7 @@ export const storyData = {
     desc: 'Masa sekolah di SMK Negeri 1 Pemalang',
   },
   expressFeelings: {
-    title: '~ 2016 - 2022',
+    title: 'Long Distance Relationship ~ 2016 - 2022',
     desc: 'LDR antara Bekasi - Pemalang, Jakarta - Semarang, Yogyakarta - Semarang',
   },
   engagement: {
@@ -44,23 +44,10 @@ export const storyData = {
   },
 };
 
-export const imgGallery = [...Array(14)].map((_, i: number) => {
+export const imgGallery = [...Array(13)].map((_, i: number) => {
   return {
     original: `/img/gallery/img-${i + 1}.jpg`,
     thumbnail: `/img/gallery/img-thumbs-${i + 1}.jpg`,
   };
 }).reverse();
 
-export const snowfallConfig: any = {
-  color: '#DEE4FD',
-  snowflakeCount: 70,
-  speed: [0, 2],
-  wind: [0, 2],
-  radius: [0.5, 1],
-  style: {
-    position: 'fixed',
-    width: '100vw',
-    height: '100vh',
-    zIndex: 9999,
-  },
-};
