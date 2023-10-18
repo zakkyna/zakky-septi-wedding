@@ -37,12 +37,12 @@ function MyApp({ Component, pageProps }: AppProps) {
         <meta property="og:image" content={imgUrl} key="ogimage" />
         <meta
           property="og:site_name"
-          content={'Undangan Pernikahan Zakky & Septi'}
+          content={'Undangan Pernikahan'}
           key="ogsitename"
         />
         <meta
           property="og:title"
-          content={'This is Our Wedding'}
+          content={'Undangan Pernikahan Zakky & Septi'}
           key="ogtitle"
         />
         <meta
