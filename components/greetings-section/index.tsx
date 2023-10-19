@@ -71,7 +71,7 @@ const GreetingsSection = ({ guestname }: GreetingsSectionProps) => {
         })
         .finally(() => {
           setLoadSubmit(false);
-          setName('');
+          if (guestname) setName(guestname);
           setGreeting('');
           initData();
         });
