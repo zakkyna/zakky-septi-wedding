@@ -157,7 +157,9 @@ const Home = () => {
           {guestName !== '' && (
             <ConfirmSection guestName={guestName} place={placeName} />
           )}
-          <GreetingsSection />
+          <GreetingsSection
+            guestname={guestName}
+          />
           <FooterSection place={placeName} />
           <FloatingQR
             show={showQR}

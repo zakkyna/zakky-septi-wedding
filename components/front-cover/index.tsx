@@ -13,7 +13,7 @@ interface FrontCoverProps {
 const FrontCover = (props: FrontCoverProps) => {
   return (
     <section
-      className="aycawd-fullbg"
+      className="wd-fullbg"
       data-aos="fade-down"
       data-aos-duration="1000">
       <div style={{

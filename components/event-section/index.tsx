@@ -119,7 +119,7 @@ alt=""
                     variant="light"
                     size="sm"
                     className="btn-open-invit">
-                    View Map
+                    Buka Google Maps
                   </Button>
                 </a>
               </div>

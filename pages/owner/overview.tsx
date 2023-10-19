@@ -1,6 +1,6 @@
 import React from 'react';
-import {Container, Row, Col, Table, Button, Form} from 'react-bootstrap';
-import {Digital} from 'react-activity';
+import { Container, Row, Col, Table, Button, Form } from 'react-bootstrap';
+import { Digital } from 'react-activity';
 import {
   getByConfirm,
   getConfirmByCount,
@@ -30,13 +30,13 @@ const OverviewSection = () => {
   React.useEffect(() => {
     initData();
 
-    return () => {};
+    return () => { };
   }, []);
 
   React.useEffect(() => {
     initTableData();
 
-    return () => {};
+    return () => { };
   }, [status, place, confirm]);
 
   const initData = async () => {
@@ -86,7 +86,7 @@ const OverviewSection = () => {
 
   const onSearch = async (name: any) => {
     setLoadingDtByName(true);
-    await getConfirmByName({Name: name})
+    await getConfirmByName({ Name: name })
       .then((res) => {
         setDtByName(res?.Data);
       })
@@ -107,7 +107,7 @@ const OverviewSection = () => {
         }
       `}</style>
       <Container>
-        <h2 className="mb-5 fw-bold">ayca-wedding Overview</h2>
+        <h2 className="mb-5 fw-bold">Overview</h2>
         {loading ? (
           <Digital color={'#414141'} />
         ) : (
@@ -116,7 +116,7 @@ const OverviewSection = () => {
               <h4 className="mb-3 fw-bold">Count Confirmation</h4>
               <Row>
                 <Col md={6}>
-                  <h6 className="mb-4 fw-bold">Tulungagung</h6>
+                  <h6 className="mb-4 fw-bold">Pemalang</h6>
                   <Table striped bordered hover variant="dark" responsive>
                     <thead>
                       <tr className="text-center">
@@ -127,32 +127,14 @@ const OverviewSection = () => {
                     </thead>
                     <tbody>
                       <tr className="text-center">
-                        <td>{dataCount.Tulungagung?.Hadir}</td>
-                        <td>{dataCount.Tulungagung?.TidakHadir}</td>
-                        <td>{dataCount.Tulungagung?.Total}</td>
+                        <td>{dataCount.Pemalang?.Hadir}</td>
+                        <td>{dataCount.Pemalang?.TidakHadir}</td>
+                        <td>{dataCount.Pemalang?.Total}</td>
                       </tr>
                     </tbody>
                   </Table>
                 </Col>
-                <Col md={6}>
-                  <h6 className="mb-4 fw-bold">Kediri</h6>
-                  <Table striped bordered hover variant="dark" responsive>
-                    <thead>
-                      <tr className="text-center">
-                        <th>Hadir</th>
-                        <th>Tidak Hadir</th>
-                        <th>Total</th>
-                      </tr>
-                    </thead>
-                    <tbody>
-                      <tr className="text-center">
-                        <td>{dataCount.Kediri?.Hadir}</td>
-                        <td>{dataCount.Kediri?.TidakHadir}</td>
-                        <td>{dataCount.Kediri?.Total}</td>
-                      </tr>
-                    </tbody>
-                  </Table>
-                </Col>
+
               </Row>
               <h6 className="mb-4 fw-bold">
                 Total all ({dataCount.Total_All})
@@ -164,22 +146,22 @@ const OverviewSection = () => {
                 {status === 'Place'
                   ? place.toUpperCase()
                   : status === 'Confirm'
-                  ? confirm
-                  : status}
+                    ? confirm
+                    : status}
                 )
               </h4>
               <div className="mb-3">
                 <Button
                   variant="secondary"
                   className="btn-sm"
-                  style={{marginRight: 6}}
+                  style={{ marginRight: 6 }}
                   onClick={() => setStatus('All')}>
                   All
                 </Button>
                 <Button
                   variant="primary"
                   className="btn-sm"
-                  style={{marginRight: 6}}
+                  style={{ marginRight: 6 }}
                   onClick={() => {
                     setStatus('Place');
                     setPlace('pml');
@@ -189,7 +171,7 @@ const OverviewSection = () => {
                 <Button
                   variant="warning"
                   className="btn-sm"
-                  style={{marginRight: 6}}
+                  style={{ marginRight: 6 }}
                   onClick={() => {
                     setStatus('Place');
                     setPlace('bks');
@@ -199,7 +181,7 @@ const OverviewSection = () => {
                 <Button
                   variant="success"
                   className="btn-sm"
-                  style={{marginRight: 6}}
+                  style={{ marginRight: 6 }}
                   onClick={() => {
                     setStatus('Confirm');
                     setConfirm('Hadir');
@@ -209,7 +191,7 @@ const OverviewSection = () => {
                 <Button
                   variant="danger"
                   className="btn-sm"
-                  style={{marginRight: 6}}
+                  style={{ marginRight: 6 }}
                   onClick={() => {
                     setStatus('Confirm');
                     setConfirm('Tidak Hadir');

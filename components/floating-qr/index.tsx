@@ -31,7 +31,7 @@ const FloatingQR = (props: FloatingQRProps) => {
   return (
     <>
       <div className="floating-qr" onClick={props?.onClick}>
-        <FontAwesomeIcon icon={faGift} color={'#414141'} />
+        <FontAwesomeIcon icon={faGift} color={'#414141'} size='xl' />
       </div>
 
       <Modal show={show} onHide={handleClose} size="sm" centered>

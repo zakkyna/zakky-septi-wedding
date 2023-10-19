@@ -1,6 +1,6 @@
 import React from 'react';
-import {faPlay, faPause} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { faPlay, faPause } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface FloatingToggleMusicProps {
   toggle: any;
@@ -13,6 +13,7 @@ const FloatingToggleMusic = (props: FloatingToggleMusicProps) => {
       <FontAwesomeIcon
         icon={props?.playing ? faPause : faPlay}
         color={'#414141'}
+        size='xl'
       />
     </div>
   );

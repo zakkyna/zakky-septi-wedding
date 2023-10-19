@@ -1,13 +1,18 @@
 import React from 'react';
-import {toast} from 'react-toastify';
-import {Digital} from 'react-activity';
-import {Col, Container, Row, Form, Button, Card} from 'react-bootstrap';
+import { toast } from 'react-toastify';
+import { Digital } from 'react-activity';
+import { Col, Container, Row, Form, Button, Card } from 'react-bootstrap';
 import moment from 'moment';
-import {createGreeting, getGreetingList} from '../../config/services';
-import {getRandomColor} from '../../utils/helper';
+import { createGreeting, getGreetingList } from '../../config/services';
+import { getRandomColor } from '../../utils/helper';
 
-const GreetingsSection = () => {
-  const [name, setName] = React.useState('');
+
+interface GreetingsSectionProps {
+  guestname?: string;
+}
+
+const GreetingsSection = ({ guestname }: GreetingsSectionProps) => {
+  const [name, setName] = React.useState(guestname || '');
   const [greeting, setGreeting] = React.useState('');
 
   const [loading, setLoading] = React.useState(false);
@@ -17,7 +22,7 @@ const GreetingsSection = () => {
   React.useEffect(() => {
     initData();
 
-    return () => {};
+    return () => { };
   }, []);
 
   const initData = async () => {
@@ -84,11 +89,11 @@ const GreetingsSection = () => {
                 <Form.Label className="isform-label">Nama Kamu</Form.Label>
                 <Form.Control
                   name="name"
-                  disabled={true}
+                  // disabled={true}
                   value={name}
                   className="isform-input"
                   type="text"
-                  placeholder="e.g. Steve Rogers"
+                  placeholder="contoh. Steve Rogers"
                   onChange={(val) => setName(val.target.value)}
                 />
               </Form.Group>
@@ -99,12 +104,12 @@ const GreetingsSection = () => {
                 </Form.Label>
                 <Form.Control
                   name="greeting"
-                  disabled={true}
+                  // disabled={true}
                   value={greeting}
                   className="isform-input"
                   as="textarea"
                   rows={4}
-                  placeholder="e.g. Happily ever after <3"
+                  placeholder="contoh. Semoga Samawa <3"
                   onChange={(val) => setGreeting(val.target.value)}
                 />
               </Form.Group>
@@ -112,8 +117,8 @@ const GreetingsSection = () => {
                 variant="light"
                 className="btn-greetings"
                 type="button"
-                // disabled={loadSubmit}
-                disabled={true}
+                disabled={loadSubmit}
+                // disabled={true}
                 onClick={() => onSubmit(name, greeting)}>
                 Kirim Ucapan
               </Button>
@@ -121,7 +126,7 @@ const GreetingsSection = () => {
             {loading && <Digital color={'#414141'} />}
             <div
               className="list-greetings"
-              style={{marginBottom: greetingList.length !== 0 ? '3rem' : 0}}>
+              style={{ marginBottom: greetingList.length !== 0 ? '3rem' : 0 }}>
               {greetingList?.map((item: any, i: number) => (
                 <div className="d-flex mb-4" key={i}>
                   <section>

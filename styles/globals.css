@@ -35,7 +35,7 @@ body {
 }
 /* end region */
 
-.aycawd-fullbg {
+.wd-fullbg {
   height: 100vh;
   background: url('/img/front-cover.jpg') no-repeat center center scroll;
   -webkit-background-size: cover;
@@ -283,6 +283,7 @@ body {
   background-image: linear-gradient(#c4c0aa, #fcf8f9);
   /* background-image: linear-gradient(#fff, #f0f0f0); */
   padding: 20px;
+  margin: 10px;
   box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
   -webkit-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
   -moz-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
@@ -407,8 +408,8 @@ body {
 .toggle-music {
   display: inline-flex;
   background-color: #e0c99d;
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
@@ -422,22 +423,37 @@ body {
   -moz-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
 }
 
+@media (max-width: 767px) {
+  .toggle-music {
+    width: 55px;
+    height: 55px;
+  }
+}
+
 .floating-qr {
   display: inline-flex;
   background-color: #e0c99d;
-  width: 40px;
-  height: 40px;
+  width: 70px;
+  height: 70px;
   justify-content: center;
   align-items: center;
   border-radius: 50%;
   transition: 0.2s;
   cursor: pointer;
   position: fixed;
-  top: 72px;
+  top: 100px;
   right: 16px;
   box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
   -webkit-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
   -moz-box-shadow: 0px 2px 18px 0px rgb(0 0 0 / 30%);
+}
+
+@media (max-width: 767px) {
+  .floating-qr {
+    width: 55px;
+    height: 55px;
+    top: 85px;
+  }
 }
 
 .floating-scrollup {
@@ -571,8 +587,8 @@ body {
 
 .isform-input {
   border-radius: 10px !important;
-  background-color: #a6a8a2 !important;
-  color: #fff !important;
+  background-color: #eae4d7 !important;
+  color: #000 !important;
   font-size: 14px !important;
   box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 30%);
   -webkit-box-shadow: 0px 2px 4px 0px rgb(0 0 0 / 30%);
@@ -580,7 +596,7 @@ body {
 }
 
 .isform-input::placeholder {
-  color: #f0f0f0 !important;
+  color: #c4c0aa !important;
   font-size: 14px !important;
 }
 
