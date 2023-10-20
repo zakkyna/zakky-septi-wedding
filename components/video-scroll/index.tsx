@@ -110,7 +110,7 @@ export default function VideoScroll1() {
               top: 0,
               left: 0,
               width: isVideoLoaded ? "100vw" : 0,
-              height: isVideoLoaded ? "100vh" : 0,
+              height: isVideoLoaded ? `calc(env(safe-area-inset-top) + env(safe-area-inset-bottom) + 100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))` : 0,
               objectFit: "cover",
               opacity: isVideoLoaded ? 1 : 0,
               transition: "opacity 0.5s ease-in-out",
@@ -128,21 +128,22 @@ export default function VideoScroll1() {
               src={isMobileDevice ? "video/videobackground_hd_mobile.mp4" : "video/videobackground_hd_web.mp4"}
             ></source>
             <div ref={scrollSectionRef} id="scrollSection"></div>
-            {/* {isSupportedBrowser() && isVideoLoaded && (
-              <div className="keep-scroll" >
-                <p className="text-center text-black scroll-text mb-1">
-                  Keep Scroll
-                </p>
-                <div className="text-center icon-down">
-                  <FontAwesomeIcon
-                    icon={faChevronDown}
-                    color={'#000000'}
-                    size={'lg'}
-                  />
-                </div>
-              </div>
-            )} */}
+
           </video>
+          {isSupportedBrowser() && isVideoLoaded && (
+            <div className="keep-scroll" >
+              <p className="text-center text-black scroll-text mb-1">
+                Keep Scroll
+              </p>
+              <div className="text-center icon-down">
+                <FontAwesomeIcon
+                  icon={faChevronDown}
+                  color={'#000000'}
+                  size={'lg'}
+                />
+              </div>
+            </div>
+          )}
         </>
       )}
     </>

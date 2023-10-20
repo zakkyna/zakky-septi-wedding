@@ -114,12 +114,15 @@ body {
 }
 
 .keep-scroll {
-  display: block;
-  margin-top: 1rem;
-  text-decoration: none;
-  opacity: 0.6;
-  transition: 0.2s;
-  cursor: pointer;
+  position: absolute;
+  top: 120%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  z-index: 1;
 }
 
 .keep-scroll:hover {
@@ -127,11 +130,13 @@ body {
 }
 .scroll-text {
   font-size: 12px;
+  margin: 0;
 }
 
 .icon-down {
   -webkit-animation: mover 1s infinite alternate;
   animation: mover 1s infinite alternate;
+  margin-top: 16px;
 }
 
 @-webkit-keyframes mover {
