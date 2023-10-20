@@ -17,7 +17,7 @@ const FrontCover = (props: FrontCoverProps) => {
       data-aos="fade-down"
       data-aos-duration="1000">
       <div style={{
-        height: '80vh',
+        height: '75vh',
       }}>
         <Col md={12} className="d-flex justify-content-center">
           <div
@@ -34,7 +34,7 @@ const FrontCover = (props: FrontCoverProps) => {
             {props.guestName.length !== 0 && (
               <>
                 <div style={{
-                  height: '5vh',
+                  height: '15px',
                 }}></div>
                 <p className="mb-1 text-center wd-for-txt">Kepada</p>
                 <Card className='guest-name-card'>
@@ -51,7 +51,7 @@ const FrontCover = (props: FrontCoverProps) => {
         </Col>
       </div>
       <div style={{
-        height: '20vh',
+        height: '25vh',
       }}>
         <Col md={12} className="d-flex justify-content-center">
           <Button
