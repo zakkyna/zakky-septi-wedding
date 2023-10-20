@@ -29,12 +29,15 @@ import VideoScroll1 from '../components/video-scroll';
 import { Stack } from 'react-bootstrap';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faChevronDown } from '@fortawesome/free-solid-svg-icons';
+import isMobile from 'is-mobile';
+
+const isMobileDevice = isMobile();
 
 const Home = () => {
   const router = useRouter();
   const { place, session, to } = router.query;
 
-  const urlAudio = '/music/main-music.mp3';
+  const urlAudio = isMobileDevice ? '/music/main-music-mobile.mp3' : '/music/main-music.mp3';
   const [playing, setPlaying, toggle] = useAudio(urlAudio) as any;
 
   const [showCover, setShowCover] = React.useState(true);

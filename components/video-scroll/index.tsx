@@ -109,7 +109,7 @@ export default function VideoScroll1() {
               position: "sticky",
               top: 0,
               left: 0,
-              width: isVideoLoaded ? "100%" : 0,
+              width: isVideoLoaded ? "100vw" : 0,
               height: isVideoLoaded ? "100vh" : 0,
               objectFit: "cover",
               opacity: isVideoLoaded ? 1 : 0,
@@ -125,7 +125,7 @@ export default function VideoScroll1() {
             draggable={false}
           >
             <source
-              src={isMobileDevice ? "video/videobackground_mobile.webm" : "video/videobackground_web.webm"}
+              src={isMobileDevice ? "video/videobackground_hd_mobile.mp4" : "video/videobackground_hd_web.mp4"}
             ></source>
             <div ref={scrollSectionRef} id="scrollSection"></div>
             {/* {isSupportedBrowser() && isVideoLoaded && (
