@@ -2,8 +2,6 @@ import { faChevronDown } from "@fortawesome/free-solid-svg-icons";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import React, { useRef, useEffect, useState } from "react";
 import isMobile from 'is-mobile';
-import { Stack } from "react-bootstrap";
-import Image from 'next/image';
 
 export default function VideoScroll1() {
   const videoRef = useRef() as any;
@@ -109,7 +107,7 @@ export default function VideoScroll1() {
               position: "sticky",
               top: 0,
               left: 0,
-              width: isVideoLoaded ? "100vw" : 0,
+              width: isVideoLoaded ? "100%" : 0,
               height: isVideoLoaded ? `calc(env(safe-area-inset-top) + env(safe-area-inset-bottom) + 100vh - env(safe-area-inset-top) - env(safe-area-inset-bottom))` : 0,
               objectFit: "cover",
               opacity: isVideoLoaded ? 1 : 0,
