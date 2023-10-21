@@ -5,6 +5,8 @@ import { Col, Container, Row, Form, Button, Card } from 'react-bootstrap';
 import moment from 'moment';
 import { createGreeting, getGreetingList } from '../../config/services';
 import { getRandomColor } from '../../utils/helper';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+import { faCheck, faCheckCircle, faHeartCircleCheck } from '@fortawesome/free-solid-svg-icons';
 
 
 interface GreetingsSectionProps {
@@ -127,6 +129,18 @@ const GreetingsSection = ({ guestname }: GreetingsSectionProps) => {
             <div
               className="list-greetings"
               style={{ marginBottom: greetingList.length !== 0 ? '3rem' : 0 }}>
+              <div className="d-flex mb-4">
+                <section>
+                  <Card className="card-greetings">
+                    <Card.Body>
+                      <p className="mb-0 sender">ZAKKY NUR ALI <FontAwesomeIcon icon={faCheckCircle} color='#0FACF5' size={'lg'} /></p>
+                      <p className="mb-0 greet">
+                        Salam kepada teman-teman semua. Mohon doa nya untuk pernikahan kami. Semoga Allah SWT memberkahi pernikahan ini sehingga hubungan kami senantiasa penuh ketentraman, kasih, dan sayang. Doa tulus dari kalian sangat kami hargai, karena itu akan membuat pernikahan ini semakin bermakna.
+                      </p>
+                    </Card.Body>
+                  </Card>
+                </section>
+              </div>
               {greetingList?.map((item: any, i: number) => (
                 <div className="d-flex mb-4" key={i}>
                   <section>
