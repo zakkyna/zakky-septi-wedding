@@ -1,8 +1,8 @@
 import React from 'react';
-import {Col, Container, Row} from 'react-bootstrap';
-import {faInstagram, faLinkedin} from '@fortawesome/free-brands-svg-icons';
-import {faGlobe} from '@fortawesome/free-solid-svg-icons';
-import {FontAwesomeIcon} from '@fortawesome/react-fontawesome';
+import { Col, Container, Row } from 'react-bootstrap';
+import { faInstagram, faLinkedin } from '@fortawesome/free-brands-svg-icons';
+import { faGlobe } from '@fortawesome/free-solid-svg-icons';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 interface FooterProps {
   place: string;
@@ -25,7 +25,10 @@ const FooterSection = (props: FooterProps) => {
             <div className="copyright">
               <div className="content">
                 <p className="text-white text-center">
-                  Build with NextJS &#10084; | &copy; Zakky Nur Ali
+                  Created by Zakky Nur Ali
+                </p>
+                <p className="text-white text-center">
+                  Build with NextJS &#10084;
                 </p>
                 <div className="d-flex justify-content-center">
                   <a href="https://zakky.my.id" target="_blank">
