@@ -17,7 +17,8 @@ export default function VideoScroll1() {
         userAgent.indexOf("safari") > -1 ||
         userAgent.indexOf("firefox") > -1) &&
       !RegExp(/(iPod|iPhone|iPad)/).exec(navigator.userAgent) &&
-      userAgent.indexOf("miuibrowser") === -1
+      userAgent.indexOf("miuibrowser") === -1 &&
+      userAgent.indexOf("vivobrowser") === -1
     );
   };
 
